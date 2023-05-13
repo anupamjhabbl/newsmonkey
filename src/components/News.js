@@ -35,7 +35,9 @@ export default class News extends Component {
     async componentDidMount() {
         let { country, category, setProgress } = this.props;
         setProgress(10);
-        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=560f9ab186d14673947ac91c9b092e59`;
+        let apiKey = process.env.REACT_APP_NEWS_API_KEY;
+        console.log(apiKey);
+        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
         let data = await fetch(link);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -61,7 +63,7 @@ export default class News extends Component {
         let { country, category, setProgress} = this.props;
         this.setState({ loading: true })
         setProgress(10);
-        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=560f9ab186d14673947ac91c9b092e59&page=${this.state.page + 1}`;
+        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}&page=${this.state.page + 1}`;
         let data = await fetch(link);
         let parsedData = await data.json();
         this.setState({
@@ -76,7 +78,7 @@ export default class News extends Component {
         let { country, category,setProgress } = this.props;
         setProgress(10);
         this.setState({ loading: true })
-        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=560f9ab186d14673947ac91c9b092e59&page=${this.state.page - 1}`;
+        let link = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}&page=${this.state.page - 1}`;
         let data = await fetch(link);
         let parsedData = await data.json();
         this.setState({
