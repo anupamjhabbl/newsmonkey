@@ -1,0 +1,48 @@
+.Navbar{
+  margin-bottom:20px;
+}
+
+.newsrow{
+  display:flex;
+  justify-content: space-around;
+  margin:20px;
+}
+
+.newsitem{
+  margin:10px;
+}
+
+.news{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 10px;
+  margin-left:30px;
+}
+
+.newsitemImg{
+  height:200px;
+}
+
+.mybuttons{
+  display:flex;
+  justify-content: space-between;
+  margin:30px;
+}
+
+.SpinnerImage{
+  width:300px;
+  height:200px;
+  margin:auto;
+  margin-top:80px;
+}
+
+.SpinnerImage>img{
+  width:300px;
+  height:200px;
+}
+
+.headtitle{
+  text-align:center;
+  margin-top:70px;
+  margin-bottom:30px;
+}
